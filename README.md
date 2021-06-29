@@ -66,7 +66,7 @@ To add or update a printer driver ("OEM Printer Driver") to a print server ("COR
 
 Clearly, if an attacker can bypass the authentication of RpcAddPrinterDriver. He could install an malicious driver in the print server. In msdn, the client need SeLoadDriverPrivilege to call the RPC. However, this isn’t true. Let check the authentication logical here:
 
-![img](file:///C:/Users/84290/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![img](./img/rootcause.png)
 
 ValidateObjectAccess is a normal security check for Spooler Service. But in line 19 and 20, argument a4 and a7 is user controllable. So, a normal user can bypass the security check and add an driver. If you are in the domain, a normal domain user can connect to the Spooler service in the DC and install a driver into the DC. Then he can fully control the Domain.
 
@@ -119,4 +119,4 @@ Here are more hidden bombs in Spooler, which is not public known. We will share 
 
 ## Credit
 
-Zhiniang Peng (@edwardzpeng) & Xuefeng Li
+Zhiniang Peng (@edwardzpeng) & Xuefeng Li (@lxf02942370)
