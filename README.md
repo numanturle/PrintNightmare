@@ -68,7 +68,7 @@ Clearly, if an attacker can bypass the authentication of RpcAddPrinterDriver. He
 
 ![img](./img/rootcause.png)
 
-ValidateObjectAccess is a normal security check for Spooler Service. But in line 19 and 20, argument a4 and a7 is user controllable. So, a normal user can bypass the security check and add an driver. If you are in the domain, a normal domain user can connect to the Spooler service in the DC and install a driver into the DC. Then he can fully control the Domain.
+ValidateObjectAccess is a normal security check for Spooler Service. But in line 19 and 20, argument a4 is user controllable. So, a normal user can bypass the security check and add an driver. If you are in the domain, a normal domain user can connect to the Spooler service in the DC and install a driver into the DC. Then he can fully control the Domain.
 
  
 
